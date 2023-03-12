@@ -1,0 +1,12 @@
+---
+- name: awx templates
+  template:
+    src: "templates/awx.py"
+    dest: "{{work_dir}}"
+    owner: root
+    group: root
+    mode: 0744
+- name: run awx python
+  shell: ./awx.py
+  args:
+    chdir: "{{work_dir}}"
