@@ -1,0 +1,10 @@
+---
+- name: base for devops core code
+  hosts: devops_jumper #192.168.56.111
+  become: yes
+  task:
+    - name: awx
+      include_role:
+        name: awx
+      vars:
+        work_dir: /tmp
